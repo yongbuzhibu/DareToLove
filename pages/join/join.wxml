@@ -1,0 +1,76 @@
+<!--logs.wxml-->
+<view class="container log-list">
+ <form bindsubmit="formSubmit" bindreset="formReset">
+  
+   <view class="row-item">
+    <label>我是 </label>
+    <radio-group name="sex">
+      <label><radio value="man"/>男</label>
+      <label><radio value="woman"/>女</label>
+    </radio-group>
+  </view>
+
+  <view class="row-item">
+    <label>真实姓名</label>
+    <input name="userName" placeholder="" />
+  </view>
+
+  <view class="row-item">
+    <label>生日</label>
+    <picker mode="date" value="{{date}}" start="1971-01-01" end="2017-01-01" bindchange="bindDateChange">
+     <view class="picker">{{date}}</view>
+    </picker>
+  </view>
+
+   <view class="row-item">
+    <label>常住地</label>
+    <input name="house" placeholder="北京 东城" />
+  </view>
+
+   <view class="row-item">
+    <label>婚姻状况</label>
+     <radio-group name="marriageStatus">
+      <label><radio value="unmarried"/>未婚</label>
+      <label><radio value="divorce"/>离异</label>
+      <label><radio value="widowed"/>丧偶</label>
+    </radio-group>
+  </view>
+
+  <view class="row-item">
+    <label>身高</label>
+    <picker bindchange="bindHeightChange" value="{{height}}" range="{{heightArray}}">
+      <view class="picker">{{height}}</view>
+    </picker>
+  </view>
+
+   <view class="row-item">
+    <label>学历</label>
+    <picker bindchange="bindEducationChange" value="{{education}}" range="{{educationArray}}">
+     <view class="picker">{{education}}</view>
+    </picker>
+  </view>
+
+   <view class="row-item">
+    <label>月薪</label>
+    <picker bindchange="bindSalaryChange" value="{{salary}}" range="{{salaryArray}}">
+     <view class="picker">{{salary}}</view>
+    </picker>
+  </view>
+
+   <view class="row-item">
+    <label>手机号</label>
+    <input name="phone" placeholder="186 8686 6666" />
+  </view>
+
+   <view class="row-item">
+    <label>自我介绍</label>
+    <textarea name="selfdesc" placeholder="听说你上得了厅堂，下得了厨房，杀得了木马，翻得了围墙，但是为什么没有人知道呢？快写下你的优秀，让TA看到吧!" />
+  </view>
+  
+  <view class="btn-area">
+    <button formType="submit">勇敢爱</button>
+    <!-- <button formType="reset">Reset</button> -->
+  </view>
+
+  </form>
+</view>
